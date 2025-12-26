@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { User, UserRole } from '../types';
@@ -31,7 +30,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ user, onLogout, children }) => 
             <Store className="text-white" size={24} />
           </div>
           <div>
-            <h1 className="font-bold text-white text-lg leading-none">StockMaster</h1>
+            <h1 className="font-bold text-white text-lg leading-none">StockFlow</h1>
             <span className="text-xs text-slate-500 uppercase tracking-widest font-bold">Pro Edition</span>
           </div>
         </div>

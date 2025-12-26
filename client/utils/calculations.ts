@@ -1,4 +1,3 @@
-
 import { StockEntry, Product, Outlet, EnrichedStockEntry } from '../types';
 
 export const calculateEntryMetrics = (
@@ -28,14 +27,15 @@ export const calculateEntryMetrics = (
 };
 
 export const formatCurrency = (value: number): string => {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-IN', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'INR',
+    maximumFractionDigits: 0
   }).format(value);
 };
 
 export const formatDate = (dateString: string): string => {
-  return new Date(dateString).toLocaleDateString('en-US', {
+  return new Date(dateString).toLocaleDateString('en-IN', {
     month: 'short',
     day: 'numeric',
     year: 'numeric'

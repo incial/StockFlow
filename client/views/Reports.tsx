@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { StockEntry, Product, EnrichedStockEntry } from '../types';
 import { MOCK_PRODUCTS, MOCK_OUTLETS } from '../constants';
@@ -132,11 +131,11 @@ const Reports: React.FC<ReportsProps> = ({ entries }) => {
                 <tr className="bg-slate-900 text-white text-[10px] uppercase tracking-widest font-bold">
                   <th className="px-6 py-4 w-16 border-r border-slate-800">Sl</th>
                   <th className="px-6 py-4 w-1/3 border-r border-slate-800">Item Description</th>
-                  <th className="px-6 py-4 w-24 border-r border-slate-800 text-center">MRP</th>
+                  <th className="px-6 py-4 w-24 border-r border-slate-800 text-center">MRP (₹)</th>
                   <th className="px-4 py-4 text-center border-r border-slate-800">Stock (Nos)</th>
-                  <th className="px-4 py-4 text-center border-r border-slate-800">Cost Amt</th>
-                  <th className="px-4 py-4 text-center border-r border-slate-800">Profit</th>
-                  <th className="px-4 py-4 text-center border-r border-slate-800">Mgn/Btl</th>
+                  <th className="px-4 py-4 text-center border-r border-slate-800">Cost Amt (₹)</th>
+                  <th className="px-4 py-4 text-center border-r border-slate-800">Profit (₹)</th>
+                  <th className="px-4 py-4 text-center border-r border-slate-800">Mgn/Btl (₹)</th>
                   <th className="px-4 py-4 text-center">Margin %</th>
                 </tr>
               </thead>
@@ -185,8 +184,8 @@ const Reports: React.FC<ReportsProps> = ({ entries }) => {
                       })}
                       <tr className="bg-slate-50/80 font-bold text-[11px] border-b border-slate-200">
                         <td colSpan={4} className="px-6 py-3 text-right border-r border-slate-200 text-slate-500 uppercase tracking-tighter">Total Bill for {brand}</td>
-                        <td className="px-4 py-3 text-right border-r border-slate-200 text-indigo-700 bg-indigo-50/50">{brandTotalAmt.toFixed(2)}</td>
-                        <td className="px-4 py-3 text-right border-r border-slate-200 text-emerald-700 bg-emerald-50/50">{brandTotalProfit.toFixed(2)}</td>
+                        <td className="px-4 py-3 text-right border-r border-slate-200 text-indigo-700 bg-indigo-50/50">₹{brandTotalAmt.toFixed(2)}</td>
+                        <td className="px-4 py-3 text-right border-r border-slate-200 text-emerald-700 bg-emerald-50/50">₹{brandTotalProfit.toFixed(2)}</td>
                         <td colSpan={2} className="bg-slate-50"></td>
                       </tr>
                     </React.Fragment>

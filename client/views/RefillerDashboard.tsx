@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { User, StockEntry, Product } from '../types';
 import { MOCK_PRODUCTS, MOCK_OUTLETS } from '../constants';
@@ -42,8 +41,8 @@ const RefillerDashboard: React.FC<RefillerDashboardProps> = ({ user, onAddEntrie
 
   const handleSave = () => {
     const newEntries: StockEntry[] = Object.entries(formData)
-      .filter(([_, data]) => data.qty && data.amt)
-      .map(([productId, data]) => ({
+      .filter(([_, data]: [string, { qty: string, amt: string }]) => data.qty && data.amt)
+      .map(([productId, data]: [string, { qty: string, amt: string }]) => ({
         id: `s-${Math.random().toString(36).substr(2, 9)}`,
         outletId: user.outletId!,
         productId,
@@ -103,7 +102,7 @@ const RefillerDashboard: React.FC<RefillerDashboardProps> = ({ user, onAddEntrie
       </div>
 
       <div className="space-y-8 pb-10">
-        {Object.entries(productsByBrand).map(([brand, products]) => (
+        {Object.entries(productsByBrand).map(([brand, products]: [string, Product[]]) => (
           <div key={brand} className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
             <div className="bg-cyan-400 px-6 py-2 text-white font-bold text-sm tracking-wide">
               {brand}
@@ -114,9 +113,9 @@ const RefillerDashboard: React.FC<RefillerDashboardProps> = ({ user, onAddEntrie
                   <tr className="bg-slate-50 border-b border-slate-100 text-[10px] uppercase font-bold text-slate-500">
                     <th className="px-6 py-3 w-16">Sl. No</th>
                     <th className="px-6 py-3">Items</th>
-                    <th className="px-6 py-3 w-24 text-center">MRP</th>
+                    <th className="px-6 py-3 w-24 text-center">MRP (₹)</th>
                     <th className="px-6 py-3 w-32 text-center">Stock (Nos)</th>
-                    <th className="px-6 py-3 w-40 text-center">Cost Amount</th>
+                    <th className="px-6 py-3 w-40 text-center">Cost Amount (₹)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
@@ -148,7 +147,7 @@ const RefillerDashboard: React.FC<RefillerDashboardProps> = ({ user, onAddEntrie
                   <tr className="bg-yellow-50/30">
                     <td colSpan={4} className="px-6 py-3 text-sm font-bold text-slate-600 text-right">Bill Amount for {brand}</td>
                     <td className="px-6 py-3 text-center text-sm font-bold text-indigo-700 bg-yellow-50">
-                      ${calculateBrandTotal(products).toFixed(2)}
+                      ₹{calculateBrandTotal(products).toFixed(2)}
                     </td>
                   </tr>
                 </tbody>

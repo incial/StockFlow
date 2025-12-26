@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MOCK_USERS } from '../constants';
 import { User, UserRole } from '../types';
@@ -31,7 +30,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <div className="inline-flex items-center justify-center p-3 bg-indigo-600 rounded-2xl shadow-lg mb-4">
             <Store className="text-white" size={40} />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">StockMaster Pro</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">StockFlow</h1>
           <p className="text-slate-400">Enterprise Multi-Outlet Inventory System</p>
         </div>
 
