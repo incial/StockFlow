@@ -1,0 +1,5 @@
+{
+  "name": "StockFlow",
+  "description": "A centralized multi-outlet stock management system designed to replace Excel-based workflows with structured data entry, real-time profit analysis, and role-based reporting.",
+  "requestFramePermissions": []
+}
